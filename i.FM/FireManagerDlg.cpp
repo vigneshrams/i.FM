@@ -6,6 +6,7 @@
 #include "FireManagerDlg.h"
 #include "afxdialogex.h"
 #include "Billing.h"
+//#include "DBManager.h"
 
 // CFireManagerDlg dialog
 
@@ -47,6 +48,8 @@ BOOL CFireManagerDlg::OnInitDialog()
 		m_ctlStock.ShowWindow(false);
 		m_ctlReport.ShowWindow(false);
 	}
+	//DBManager mDBMgr;
+	//mDBMgr.InsertStock();
 	return TRUE;
 }
 
@@ -60,8 +63,12 @@ void CFireManagerDlg::OnBnClickedBilling()
 {
 	CBilling billingDlg;
 	billingDlg.detailsStruct.wstrProName = L"Standard Crackers";
+	billingDlg.detailsStruct.iRatePerPiece = 10;
 	billingDlg.detailsStruct.iQuantity = 100;
 	billingDlg.detailsStruct.dPrice = 1000;
+	billingDlg.InsertScanedProduct(billingDlg.detailsStruct);
+
+	
 	billingDlg.InsertScanedProduct(billingDlg.detailsStruct);
 	billingDlg.DoModal();
 }
@@ -71,3 +78,4 @@ void CFireManagerDlg::OnBnClickedReport()
 {
 	// TODO: Add your control notification handler code here
 }
+

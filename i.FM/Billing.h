@@ -21,6 +21,7 @@ public:
 
 private:
 	int  m_callingCount;
+	int m_iSelectedItem;
 	void AddColumns();
 	void FillListBox();
 	std::wstring ConvertIntToWstr(int value);
@@ -38,6 +39,7 @@ public:
 	struct productDetails
 	{
 		CString wstrProName;
+		int     iRatePerPiece;
 		int		iQuantity;
 		double	dPrice;
 	};
@@ -53,4 +55,9 @@ public:
 	CButton m_PrintBtn;
 	CStatic m_CurrentDate;
 	CEdit m_BillNoEdtCtrl;
+	CEdit m_ProductNameEdtCtrl;
+	afx_msg void OnEnChangePrdtnameEdit();
+	afx_msg void OnEnChangePriceEditctrl();
+	afx_msg void OnLvnItemchangedBillingListctrl(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnEnChangeEdit3();
 };

@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.obj
+i.FM/Debug/CL.read.1.tlog
+*.tlog
+i.FM/Debug/i.FM.Build.CppClean.log
+*.suo
+Debug/i.FM.pdb
+*.exe

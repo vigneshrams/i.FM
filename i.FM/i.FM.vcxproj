@@ -94,40 +94,6 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="hlp\HIDD_ROOT_DIALOG.htm">
-      <DeploymentContent>true</DeploymentContent>
-    </None>
-    <None Include="hlp\iFM.hhc" />
-    <None Include="hlp\iFM.hhk" />
-    <CustomBuild Include="hlp\iFM.hhp">
-      <FileType>Document</FileType>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)i.FM.chm;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">start /wait hhc "hlp\iFM.hhp"
-if not exist "hlp\iFM.chm" goto :HelpError
-copy "hlp\iFM.chm" "$(OutDir)i.FM.chm"
-goto :HelpDone
-:HelpError
-echo hlp\iFM.hhp(1) : error:Problem encountered creating help file
-echo.
-:HelpDone
-echo.
-</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Making help file...</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)i.FM.chm;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">hlp\HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">start /wait hhc "hlp\iFM.hhp"
-if not exist "hlp\iFM.chm" goto :HelpError
-copy "hlp\iFM.chm" "$(OutDir)i.FM.chm"
-goto :HelpDone
-:HelpError
-echo hlp\iFM.hhp(1) : error:Problem encountered creating help file
-echo.
-:HelpDone
-echo.
-</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Making help file...</Message>
-    </CustomBuild>
     <None Include="ReadMe.txt" />
     <None Include="res\i.FM.ico" />
     <None Include="res\iFM.rc2" />
